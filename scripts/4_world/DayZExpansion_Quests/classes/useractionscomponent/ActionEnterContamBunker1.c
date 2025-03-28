@@ -1,0 +1,36 @@
+class ActionEnterContamBunker1: ActionOpenDoors
+{
+	void ActionEnterContamBunker1()
+	{
+		m_CommandUID 	= DayZPlayerConstants.CMD_ACTIONMOD_OPENDOORFW;
+		m_StanceMask 	= DayZPlayerConstants.STANCEMASK_CROUCH | DayZPlayerConstants.STANCEMASK_ERECT;
+		m_Text 			= "Enter";
+	}
+
+	override bool ActionCondition(PlayerBase player, ActionTarget target, ItemBase item)
+	{
+		return true;
+	}
+	
+	override void OnEndClient(ActionData action_data)
+	{
+		super.OnEndClient(action_data);
+
+		if (action_data.m_Player != NULL)
+		{
+			autoptr EffectSound doorSound;
+			action_data.m_Player.PlaySoundSet(doorSound, "Zen_QuestCaveDoor_SoundSet", 0, 0, false);
+		}
+	}
+
+	override void OnEndServer(ActionData action_data)
+	{
+		super.OnEndServer(action_data);
+
+		if (action_data.m_Player != NULL)
+		{
+			vector pos = ZenFunctions.GetRandomPointInCircle("7436.999512 5287.401367 2637.758789", 1, 0, false);
+			action_data.m_Player.SetPosition(pos);
+		}
+	}
+}

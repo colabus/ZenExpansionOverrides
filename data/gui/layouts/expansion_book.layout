@@ -1,0 +1,123 @@
+FrameWidgetClass DonateBookFrame {
+ visible 1
+ ignorepointer 1
+ position 0 0
+ size 1920 1080
+ halign center_ref
+ valign center_ref
+ hexactpos 0
+ vexactpos 0
+ hexactsize 1
+ vexactsize 1
+ scriptclass ""
+ {
+  PanelWidgetClass book_content_panel2 {
+   visible 1
+   ignorepointer 1
+   position 0 -0.04
+   size 0.5 0.57
+   halign center_ref
+   valign center_ref
+   hexactpos 0
+   vexactpos 0
+   hexactsize 0
+   vexactsize 0
+   priority 1
+   {
+    WrapSpacerWidgetClass book_content_right2 {
+     ignorepointer 1
+     position -0.00068 0.00107
+     size 0.48 1
+     halign right_ref
+     valign center_ref
+     hexactpos 0
+     vexactpos 0
+     hexactsize 0
+     vexactsize 0
+     priority 1
+     scriptclass ""
+     Padding 5
+     Margin 0
+     {
+      MultilineTextWidgetClass DonateTitleWidget {
+       ignorepointer 1
+       color 0.1255 0.1098 0.1098 1
+       position 0 0
+       size 1 0.06
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       text "This Month's Donations: $0"
+       font "gui/fonts/metron-bold"
+       "text halign" center
+       "text valign" center
+       wrap 1
+      }
+      ProgressBarWidgetClass DonateProgressBarWidget {
+       ignorepointer 1
+       color 0.1098 0.8745 0.302 1
+       position 0 0
+       size 1 0.01
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       style Default
+       maximum 1320
+       current 194
+      }
+      MultilineTextWidgetClass DonateDescriptionWidget {
+       ignorepointer 1
+       color 0.1255 0.1098 0.1098 1
+       position 0 0
+       size 1 0.1
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       text "This server currently costs me $440/month. Donations are not expected but they're extremely appreciated and help us all to keep this community alive!"
+       "text color" 0.1255 0.1216 0.1098 1
+       "text halign" center
+       "text valign" center
+       wrap 1
+      }
+      MultilineTextWidgetClass DonateNamesWidget {
+       ignorepointer 1
+       color 0.3765 0.502 0.251 1
+       position 0 0
+       size 1 0.05
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       text "$0"
+       "exact text" 1
+       "size to text h" 0
+       "size to text v" 0
+       "text halign" center
+       "text valign" center
+       wrap 1
+      }
+      ButtonWidgetClass DonateButtonWidget {
+       disabled 1
+       color 0.251 0.502 0.502 1
+       position 0 0
+       size 1 0.05
+       hexactpos 0
+       vexactpos 0
+       hexactsize 0
+       vexactsize 0
+       scriptclass ""
+       style Default
+       "no focus" 0
+       text "hardcoredayz.com/donate"
+       "text color" 0.2353 0.6235 0.6235 1
+       "disabled text color" 0.1098 0.302 0.8745 1
+      }
+     }
+    }
+   }
+  }
+ }
+}
